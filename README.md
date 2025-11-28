@@ -180,6 +180,29 @@ The application uses Supabase Realtime for instant updates:
 
 ## Deployment
 
+### Deploy to GitHub Pages (Automatic)
+
+This repository is configured for automatic deployment to GitHub Pages.
+
+**Live Site**: https://AlixSahil.github.io/Live_quiz/
+
+**How it works**:
+- When changes are pushed to the `main` branch, GitHub Actions automatically builds and deploys the site
+- The workflow uses `peaceiris/actions-gh-pages` to publish the `dist` folder to the `gh-pages` branch
+- GitHub Pages serves the site from the `gh-pages` branch
+
+**To enable GitHub Pages** (if not already enabled):
+1. Go to repository Settings → Pages
+2. Set Source to "Deploy from a branch"
+3. Select the `gh-pages` branch and `/ (root)` folder
+4. Click Save
+
+**Manual deployment**:
+```bash
+npm run deploy
+```
+This will build the project and deploy to the `gh-pages` branch using the `gh-pages` package.
+
 ### Deploy to Netlify
 
 1. Build the project:

@@ -18,7 +18,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/Live_quiz">
         <Routes>
           <Route path="/" element={<Navigate to="/admin/login" />} />
           <Route path="/admin/login" element={<AdminLogin />} />
