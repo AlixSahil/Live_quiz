@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
+import { ConfigError } from './components/ConfigError';
+import { isSupabaseConfigured } from './lib/supabase';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import CreateQuiz from './pages/CreateQuiz';
@@ -10,6 +12,10 @@ import QuizPlay from './pages/QuizPlay';
 import QuizLeaderboard from './pages/QuizLeaderboard';
 
 function App() {
+  if (!isSupabaseConfigured) {
+    return <ConfigError />;
+  }
+
   return (
     <AuthProvider>
       <BrowserRouter>
